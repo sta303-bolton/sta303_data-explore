@@ -100,12 +100,16 @@ saveRDS(nbhood_profile, "data/neighbourhood_profile.Rds")
 
 daily_data <- "data/CityofToronto_COVID-19_Daily_Public_Reporting.xlsx"
 
-# Cases reported by date
-reported_raw <- read_excel(daily_data, sheet = 5) %>% 
+# Cases reported by date (double check the sheet is correct)
+# Should be a sheet names something like  
+## 'Cases by Reported Date'
+reported_raw <- read_excel(daily_data, sheet = 6) %>% 
   clean_names()
 
-# Cases by outbreak type
-outbreak_raw <- read_excel(daily_data, sheet = 3) %>% 
+# Cases by outbreak type (double check the sheet is correct)
+# Should be a sheet names something like  
+## 'Cases by Outbreak Type and Epis'
+outbreak_raw <- read_excel(daily_data, sheet = 4) %>% 
   clean_names()
 
 # When was this data updated?
